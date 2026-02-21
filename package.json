@@ -1,0 +1,31 @@
+{
+  "name": "zhihuichuangzhe-website",
+  "version": "1.0.0",
+  "description": "智慧创造者网站 - AI文案助手平台",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo '直接在浏览器中打开index.html'",
+    "test": "echo '测试网站功能'",
+    "deploy": "echo '部署到GitHub Pages: git push origin main'"
+  },
+  "keywords": [
+    "AI",
+    "文案",
+    "助手",
+    "智慧创造",
+    "SaaS",
+    "支付"
+  ],
+  "author": "智慧创造者团队",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/zhihuichuangzhe-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/zhihuichuangzhe-website/issues"
+  },
+  "homepage": "https://your-username.github.io/zhihuichuangzhe-website",
+  "devDependencies": {},
+  "dependencies": {}
+}

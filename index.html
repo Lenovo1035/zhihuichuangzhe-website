@@ -1,0 +1,1124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- SEO优化 -->
+    <meta name="description" content="小虾AI文案助手 - 专业的AI文案生成工具，帮助您快速创建高质量营销文案、社交媒体内容、产品描述等。">
+    <meta name="keywords" content="AI文案,文案生成,营销文案,社交媒体文案,AI写作助手">
+    <meta name="author" content="小虾智能助手">
+    <meta property="og:title" content="小虾AI文案助手">
+    <meta property="og:description" content="专业的AI文案生成工具">
+    <meta property="og:image" content="https://你的域名.com/logo.png">
+    <meta property="og:url" content="https://你的域名.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 移动端优化 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#4f46e5">
+    
+    <!-- PWA支持 -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- 网站验证（部署后添加） -->
+    <!-- <meta name="google-site-verification" content="你的验证码"> -->
+    <!-- <meta name="baidu-site-verification" content="你的验证码"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小虾AI文案助手 - 智能文案创作工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* 官方头部样式 */
+        header {
+            background: white;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .logo h1 {
+            color: #1a202c;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            background: #2d3748;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-menu a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover {
+            color: #2d3748;
+        }
+        
+        /* 官方英雄区域 */
+        .hero {
+            background: white;
+            padding: 80px 0;
+            margin-bottom: 60px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            color: #1a202c;
+            margin-bottom: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #4a5568;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #2d3748;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            border: 2px solid #2d3748;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: #2d3748;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 55, 72, 0.1);
+        }
+        
+        /* 官方功能区域 */
+        .features {
+            padding: 80px 0;
+            margin-bottom: 60px;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            color: #1a202c;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        
+        .feature-card:hover {
+            border-color: #2d3748;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        
+        .feature-card h3 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .feature-details {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .feature-details p {
+            font-size: 15px;
+            color: #718096;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-details p:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2d3748;
+            font-weight: bold;
+        }
+        
+        /* 价格区域 */
+        .pricing {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .pricing h2 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .pricing-card {
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card.popular {
+            border-color: #667eea;
+            transform: scale(1.05);
+            position: relative;
+        }
+        
+        .pricing-card.popular::before {
+            content: "最受欢迎";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 16px;
+            color: #718096;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        
+        /* 官方用户案例样式 */
+        .testimonials {
+            padding: 80px 0;
+            margin-bottom: 60px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            color: #1a202c;
+            margin-bottom: 60px;
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 48px;
+            color: #e2e8f0;
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            color: #4a5568;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            font-size: 16px;
+            padding-left: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .testimonial-author strong {
+            color: #1a202c;
+            font-weight: 600;
+        }
+        
+        .testimonial-author span {
+            color: #718096;
+        }
+        
+        /* 数据成果样式 */
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .stats h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        /* 使用流程样式 */
+        .workflow {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .workflow h2 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .workflow-step {
+            text-align: center;
+            padding: 30px;
+            background: #f7fafc;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .workflow-step h3 {
+            color: #2d3748;
+            margin: 20px 0 15px;
+            font-size: 20px;
+        }
+        
+        .workflow-step p {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+        
+        .step-details {
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        .step-details p {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .step-details p:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+        
+        /* 常见问题样式 */
+        .faq {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .faq h2 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        
+        .faq-items {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-item h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .faq-item p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* 下载区域 */
+        .download {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .download h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: #48bb78;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        
+        .download-button:hover {
+            background: #38a169;
+        }
+        
+        /* 官方页脚 */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 60px 0 40px;
+        }
+        
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-brand p {
+            color: #cbd5e0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .footer-links h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-contact h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-contact p {
+            color: #cbd5e0;
+            margin-bottom: 12px;
+        }
+        
+        .footer-contact a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-contact a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 60px auto 0;
+            padding: 30px 40px 0;
+            border-top: 1px solid #4a5568;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+        }
+    </style>
+</head><a href="payment.html" style="position:absolute;top:20px;right:20px;background:#4f46e5;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">立即支付</a>
+<body>
+    <div class="container">
+        <!-- 官方头部 -->
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>智言慧创</h1>
+                    <span>AI赋能的文明内容创作</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#features">核心功能</a>
+                    <a href="#pricing">方案选择</a>
+                    <a href="#testimonials">用户见证</a>
+                    <a href="#download">立即体验</a>
+                    <a href="#contact">联系我们</a>
+                </nav>
+            </div>
+        </header><a href="payment.html" style="position:absolute;top:20px;right:20px;background:#4f46e5;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;">立即支付</a>
+
+        <!-- 官方英雄区域 -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>当古老智慧遇见现代科技</h2>
+                <p>我们相信，每一次表达都是文明的传承。AI不应替代思考，而应升华表达的艺术。</p>
+                <a href="#download" class="cta-button">开启智慧创作之旅</a>
+            </div>
+        </section>
+
+        <!-- 官方功能区域 -->
+        <section class="features" id="features">
+            <h2>核心功能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>文明传播的艺术</h3>
+                    <p>将深刻思想转化为优雅表达，让智慧在数字时代绽放光芒</p>
+                    <p><strong>文化传承：</strong>经典智慧现代化表达，传统文化当代诠释</p>
+                    <div class="feature-details">
+                        <p>支持经典著作智能解读</p>
+                        <p>提供多种文学风格选择</p>
+                        <p>融入东方美学元素</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>创意表达的升华</h3>
+                    <p>AI不替代灵感，而是放大创意的可能性，让每个想法都找到最佳表达</p>
+                    <p><strong>艺术融合：</strong>科技与人文的对话，理性与感性的平衡</p>
+                    <div class="feature-details">
+                        <p>创意灵感智能激发</p>
+                        <p>表达风格精准匹配</p>
+                        <p>情感色彩智能渲染</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>跨文化智慧交流</h3>
+                    <p>打破语言与文化壁垒，让东方智慧与西方思维在AI中交融</p>
+                    <p><strong>全球视野：</strong>多语言智能转换，文化语境精准理解</p>
+                    <div class="feature-details">
+                        <p>支持10+语言智能转换</p>
+                        <p>文化差异智能识别</p>
+                        <p>跨文化沟通优化</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>深度思考的伙伴</h3>
+                    <p>不只是工具，更是思考的延伸，帮助梳理逻辑，升华观点</p>
+                    <p><strong>思维提升：</strong>逻辑结构优化，观点深度挖掘，表达层次丰富</p>
+                    <div class="feature-details">
+                        <p>逻辑结构智能优化</p>
+                        <p>观点深度智能挖掘</p>
+                        <p>表达层次智能丰富</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 官方用户案例展示 -->
+        <section class="testimonials" id="testimonials">
+            <h2>用户见证</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>智言慧创让我的学术论文写作效率提升了300%，更重要的是，它帮助我找到了更优雅的表达方式。</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>张教授 · 文学研究者</strong>
+                        <span>使用时间：6个月</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>作为跨国企业管理者，跨文化智慧交流功能帮助我们避免了多次文化误解，沟通效率显著提升。</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>李总 · 跨国企业高管</strong>
+                        <span>使用时间：4个月</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>深度思考伙伴功能就像我的第二大脑，帮助我梳理复杂逻辑，让思考更加清晰有条理。</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>王博士 · 科研工作者</strong>
+                        <span>使用时间：8个月</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据成果展示 -->
+        <section class="stats">
+            <h2>智慧传承的数据见证</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">300%</div>
+                    <div class="stat-label">表达效率提升</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">用户满意度</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">支持语言</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">智慧模板</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 价格区域 -->
+        <section class="pricing">
+            <h2>选择适合您的方案</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>启迪 · 初识</h3>
+                    <div class="price">$5<span>/月</span></div>
+                    <ul class="pricing-features">
+                        <li>文明表达基础探索</li>
+                        <li>经典智慧模板库</li>
+                        <li>基础文化指导</li>
+                        <li>7日智慧体验</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">开启智慧之门</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <h3>升华 · 精进</h3>
+                    <div class="price">$15<span>/月</span></div>
+                    <ul class="pricing-features">
+                        <li>深度文化表达引擎</li>
+                        <li>完整智慧传承库</li>
+                        <li>优先文化顾问支持</li>
+                        <li>团队智慧协作空间</li>
+                        <li>7日深度体验</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">选择深度探索</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>传承 · 致远</h3>
+                    <div class="price">$30<span>/月</span></div>
+                    <ul class="pricing-features">
+                        <li>无限智慧表达可能</li>
+                        <li>全维度文化集成</li>
+                        <li>专属文明传承顾问</li>
+                        <li>定制文化表达方案</li>
+                        <li>机构级智慧协作</li>
+                        <li>7日传承体验</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">预约文明对话</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用流程展示 -->
+        <section class="workflow">
+            <h2>三步开启智慧传承之旅</h2>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>下载体验</h3>
+                    <p>下载智慧传承启动包，开始7日深度体验</p>
+                    <div class="step-details">
+                        <p>✅ 一键安装，无需复杂配置</p>
+                        <p>✅ 全功能试用，零风险体验</p>
+                        <p>✅ 专业指导，快速上手</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>深度探索</h3>
+                    <p>体验四大核心功能，感受智慧传承的魅力</p>
+                    <div class="step-details">
+                        <p>📜 尝试文明传播的艺术</p>
+                        <p>🎨 体验创意表达的升华</p>
+                        <p>🌍 实践跨文化智慧交流</p>
+                        <p>💭 使用深度思考的伙伴</p>
+                    </div>
+                </div>
+                
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>选择传承</h3>
+                    <p>根据需求选择合适的方案，开启长期智慧传承</p>
+                    <div class="step-details">
+                        <p>💰 选择适合的文明支持方案</p>
+                        <p>🤝 获得专属文明顾问支持</p>
+                        <p>🚀 开启持续智慧成长之旅</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题区域 -->
+        <section class="faq">
+            <h2>智慧传承常见问题</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h3>🤔 智慧传承适合哪些人使用？</h3>
+                    <p>适合所有追求优雅表达、重视文化传承的思想者，包括学者、作家、管理者、教育工作者、内容创作者等。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>💻 需要什么技术基础？</h3>
+                    <p>无需专业技术基础，我们提供一键安装和详细指导，确保每位智慧追求者都能轻松上手。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>🔄 试用期结束后会怎样？</h3>
+                    <p>试用期结束后，您可以选择适合的方案继续使用，或者导出您的创作成果。我们尊重每一位智慧追求者的选择。</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>🔒 数据安全和隐私如何保障？</h3>
+                    <p>我们采用企业级数据加密技术，严格遵守隐私保护法规，您的创作成果和思考记录都受到全面保护。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 智慧传承区域 -->
+        <section class="download" id="download">
+            <h2>开启文明与科技的对话</h2>
+            <p>体验智慧传承的现代表达，7日深度文化体验，感受思想与科技的共鸣</p>
+            <div>
+                <a href="智慧传承启动包.zip" class="download-button" download>下载智慧传承版</a>
+                <a href="#contact" class="download-button">获取文化精进版</a>
+                <a href="#contact" class="download-button">机构传承定制版</a>
+            </div>
+            <p style="margin-top: 20px; color: #718096; font-size: 14px;">
+                系统要求：支持现代文明表达的任何设备，心怀对智慧的敬畏，对美的追求
+            </p>
+        </section>
+
+        <!-- 官方页脚 -->
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>智言慧创</h3>
+                    <p>以科技传承文明，用智能赋能创作。我们致力于为思想者提供优雅的表达艺术，让每一次创作都成为文明的传承。</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#features">核心功能</a></li>
+                        <li><a href="#pricing">方案选择</a></li>
+                        <li><a href="#testimonials">用户见证</a></li>
+                        <li><a href="#download">立即体验</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p><a href="mailto:wisdom@zhihui.org">wisdom@zhihui.org</a></p>
+                    <p><a href="mailto:culture@zhihui.org">culture@zhihui.org</a></p>
+                    <p>工作日 9:00-18:00</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 智慧传承研究院 · 保留一切文明表达的权利</p>
+                <p>文明传承支持：文化基金、智慧赞助、机构合作 | 7×24小时文明顾问服务</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 智慧交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 下载按钮点击事件
+            const downloadButtons = document.querySelectorAll('.download-button');
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '智慧传承启动包.zip') {
+                        // 下载统计
+                        console.log('用户点击下载智慧传承版');
+                        // 这里可以添加更复杂的统计逻辑
+                    }
+                });
+            });
+            
+            // 价格卡片悬停效果
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 10px 25px rgba(0,0,0,0.15)';
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                    if (!this.classList.contains('popular')) {
+                        this.style.transform = 'none';
+                    } else {
+                        this.style.transform = 'scale(1.05)';
+                    }
+                });
+            });
+            
+            // 功能卡片悬停效果
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'none';
+                });
+            });
+            
+            // 用户案例卡片悬停效果
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            testimonialCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'none';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 数据统计动画
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target;
+                        const targetValue = parseInt(statNumber.textContent);
+                        let currentValue = 0;
+                        const increment = targetValue / 50;
+                        const timer = setInterval(() => {
+                            currentValue += increment;
+                            if (currentValue >= targetValue) {
+                                statNumber.textContent = targetValue + (statNumber.textContent.includes('%') ? '%' : '+');
+                                clearInterval(timer);
+                            } else {
+                                statNumber.textContent = Math.floor(currentValue) + (statNumber.textContent.includes('%') ? '%' : '+');
+                            }
+                        }, 30);
+                        observer.unobserve(statNumber);
+                    }
+                });
+            }, observerOptions);
+            
+            statNumbers.forEach(statNumber => {
+                observer.observe(statNumber);
+            });
+            
+            // FAQ展开效果
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3');
+                const answer = item.querySelector('p');
+                
+                // 初始状态
+                answer.style.maxHeight = '0';
+                answer.style.overflow = 'hidden';
+                answer.style.transition = 'max-height 0.3s ease';
+                
+                question.style.cursor = 'pointer';
+                question.addEventListener('click', function() {
+                    if (answer.style.maxHeight === '0px' || answer.style.maxHeight === '') {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
+                });
+            });
+        });
+        
+        // 智慧访问统计
+        window.onload = function() {
+            console.log('智言慧创网站访问时间:', new Date().toLocaleString());
+            console.log('用户设备信息:', navigator.userAgent);
+            
+            // 记录页面访问
+            try {
+                localStorage.setItem('lastVisit', new Date().toISOString());
+                let visitCount = parseInt(localStorage.getItem('visitCount') || '0');
+                visitCount++;
+                localStorage.setItem('visitCount', visitCount.toString());
+                console.log('访问次数:', visitCount);
+            } catch (e) {
+                console.log('本地存储不可用');
+            }
+        };
+        
+        // 页面滚动效果
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const header = document.querySelector('header');
+            
+            if (scrollPosition > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.transform = 'translateY(-5px)';
+            } else {
+                header.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                header.style.transform = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
